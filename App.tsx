@@ -1,3 +1,4 @@
+import { Loading } from "@components/Loading";
 import {
   useFonts,
   Roboto_400Regular,
@@ -17,12 +18,12 @@ export default function App() {
       />
       {fontsLoaded ? (
         <View style={styles.container}>
-          <Text style={{ fontFamily: "Roboto_700Bold" }}>
+          <Text style={{ fontFamily: "Roboto_400Regular" }}>
             Open up App.sx to stok art working on your app! macbook air
           </Text>
         </View>
       ) : (
-        <Text>Font is not loaded</Text>
+        <Loading />
       )}
     </NativeBaseProvider>
   );
