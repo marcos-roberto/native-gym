@@ -7,6 +7,7 @@ import {
 import { NativeBaseProvider } from "native-base";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { THEME } from "./src/theme";
+import { SignIn } from "@screens/SignIn";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -18,24 +19,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? (
-        <View style={styles.container}>
-          <Text style={{ fontFamily: "Roboto_400Regular" }}>
-            Open up App.sx to stok art working on your app! macbook air
-          </Text>
-        </View>
-      ) : (
-        <Loading />
-      )}
+      {fontsLoaded ? <SignIn /> : <Loading />}
     </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
